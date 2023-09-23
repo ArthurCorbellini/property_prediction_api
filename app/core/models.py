@@ -2,7 +2,11 @@
 Database models.
 """
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.contrib.auth.models import (
+    AbstractBaseUser,
+    BaseUserManager,
+    PermissionsMixin,
+)
 
 
 class UserManager(BaseUserManager):
@@ -26,4 +30,5 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     objects = UserManager()
 
-    USERNAME_FIELD = "email"  # substitui o username pelo email no login pelo django
+    # substitui o username pelo email no login pelo django
+    USERNAME_FIELD = "email"
