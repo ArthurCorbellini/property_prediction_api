@@ -1,6 +1,7 @@
 """
 Database models.
 """
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import (
     AbstractBaseUser,
@@ -43,3 +44,27 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     # substitui o username pelo email no login pelo django
     USERNAME_FIELD = "email"
+
+
+class Property(models.Model):
+    """Property object."""
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        blank=True
+    )
+    city = models.CharField(max_length=255)
+    area = models.IntegerField()
+    qt_rooms = models.IntegerField()
+    qt_bathrooms = models.IntegerField()
+    qt_parking_spaces = models.IntegerField()
+    floor = models.IntegerField()
+    allows_animals = models.BooleanField()
+    furnished = models.BooleanField()
+    vl_hoa = models.DecimalField(max_digits=10, decimal_places=2)
+    vl_rent = models.DecimalField(max_digits=10, decimal_places=2)
+    vl_tax = models.DecimalField(max_digits=10, decimal_places=2)
+    vl_fire_insurance = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return str(self.city + " " + self.area + " " + self.vl_rent)
