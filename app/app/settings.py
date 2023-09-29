@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'core',
     'user',
-    'property',
+    'real_estate',
 ]
 
 MIDDLEWARE = [

@@ -46,8 +46,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = "email"
 
 
-class Property(models.Model):
-    """Property object."""
+class RealEstate(models.Model):
+    """RealEstate object."""
     owner = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
