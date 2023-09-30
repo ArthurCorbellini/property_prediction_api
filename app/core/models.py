@@ -67,4 +67,4 @@ class RealEstate(models.Model):
     vl_fire_insurance = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
-        return str(self.city + " " + self.area + " " + self.vl_rent)
+        return str("Real Estate : " + self.city + " (" + self.area + ") m²")
