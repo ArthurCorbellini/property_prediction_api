@@ -10,5 +10,15 @@ class RealEstateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = RealEstate
-        fields = ['city', 'area', 'qt_rooms', 'qt_bathrooms', 'qt_parking_spaces', 'floor',
-                  'allows_animals', 'furnished', 'vl_hoa', 'vl_rent', 'vl_tax', 'vl_fire_insurance']
+        fields = [
+            'city',
+            'area',
+            'rooms',
+            'bathroom',
+            'parking_spaces',
+            'animal',
+            'furniture',
+            'hoa',
+            'property_tax',
+            'fire_insurance',
+        ]
